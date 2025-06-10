@@ -140,7 +140,7 @@ export default class ComponentDetection {
           const manifest = new Manifest(location, location);
           manifests.push(manifest);
         }
-        if (pkg.topLevelReferrers.length == 0) {
+        if (pkg.topLevelReferrers.length == 1) {
           manifests.find((manifest: Manifest) => manifest.name == location)?.addDirectDependency(pkg, ComponentDetection.getDependencyScope(pkg));
         } else {
           manifests.find((manifest: Manifest) => manifest.name == location)?.addIndirectDependency(pkg, ComponentDetection.getDependencyScope(pkg));
